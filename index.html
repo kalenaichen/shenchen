@@ -12,7 +12,7 @@
             --text-main: #333333;
             --text-muted: #666666;
             --accent: #e74c3c;
-            --hsr-color: #d35400; /* 高鐵醒目色 */
+            --hsr-color: #d35400;
         }
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
@@ -38,7 +38,7 @@
             background: var(--card-bg);
             border-radius: 12px;
             padding: 15px;
-            margin-bottom: 20px;
+            margin-bottom: 15px;
             box-shadow: 0 4px 6px rgba(0,0,0,0.05);
             display: flex;
             justify-content: space-around;
@@ -53,6 +53,18 @@
             align-items: center;
         }
         .tool-btn span { font-size: 24px; margin-bottom: 6px; }
+
+        .browser-warning {
+            background-color: #fff3cd;
+            color: #856404;
+            padding: 10px;
+            border-radius: 8px;
+            font-size: 13px;
+            text-align: center;
+            margin-bottom: 15px;
+            border: 1px solid #ffeeba;
+            line-height: 1.4;
+        }
 
         .tabs {
             display: flex;
@@ -103,7 +115,6 @@
         .activity { font-size: 16px; margin: 5px 0 10px 0; line-height: 1.5; font-weight: bold;}
         .details { font-size: 14px; color: var(--text-muted); margin-bottom: 10px; line-height: 1.6;}
         
-        /* 高鐵專屬醒目樣式 */
         .hsr-highlight {
             display: block;
             color: var(--hsr-color);
@@ -131,7 +142,6 @@
         }
         .baidu-link::before { content: "📍 "; }
 
-        /* 記帳表專屬樣式 */
         .accounting-card {
             background: var(--card-bg);
             border-radius: 10px;
@@ -159,6 +169,7 @@
     </header>
 
     <div class="container">
+        
         <div class="tools-card">
             <a href="https://map.baidu.com/mobile/webapp/index/index/" target="_blank" class="tool-btn">
                 <span>🗺️</span>百度地圖
@@ -171,21 +182,24 @@
             </a>
         </div>
 
+        <div class="browser-warning">
+            💡 <strong>小提醒：</strong>若發現「地圖按鈕」點了沒反應，請點擊螢幕角落的選單，選擇<strong>「以預設瀏覽器開啟 (Safari/Chrome)」</strong>就可以正常導航囉！
+        </div>
+
         <div class="tabs">
-            <div class="tab active" onclick="switchTab('day1', this)">2/26</div>
+            <div class="tab" onclick="switchTab('day1', this)">2/26</div>
             <div class="tab" onclick="switchTab('day2', this)">2/27</div>
             <div class="tab" onclick="switchTab('day3', this)">2/28</div>
             <div class="tab" onclick="switchTab('day4', this)">3/1</div>
             <div class="tab" onclick="switchTab('accounting', this)">💰 記帳</div>
         </div>
 
-        <div id="day1" class="day-content active">
+        <div id="day1" class="day-content">
             <div class="timeline-item">
                 <div class="time-badge">08:00 - 10:15</div>
                 <div class="activity">出發前往香港</div>
                 <div class="details">TPE-HKG (國泰航空 CX 407 8:00出發，10:15抵達)</div>
             </div>
-            
             <div class="timeline-item">
                 <div class="time-badge">11:30 - 14:00</div>
                 <div class="activity">抵達香港與沙田行程</div>
@@ -197,36 +211,6 @@
                 <a href="https://map.baidu.com/search/沙田宝福山" target="_blank" class="baidu-link">沙田寶福山</a>
                 <a href="https://map.baidu.com/search/沙田新城市广场" target="_blank" class="baidu-link">新城市廣場</a>
             </div>
-
             <div class="timeline-item">
                 <div class="time-badge">14:00 - 16:00</div>
-                <div class="activity">過關與飯店 Check-in</div>
-                <div class="details">
-                    14:00-15:00 至落馬洲-福田口岸過關。<br>
-                    預計 16:00 入住：岗厦汇国际公寓 (福田区福华路岗厦汇花园B2座10楼1018室)。
-                </div>
-                <a href="https://map.baidu.com/search/福田口岸" target="_blank" class="baidu-link">福田口岸</a>
-                <a href="https://map.baidu.com/search/岗厦汇国际公寓" target="_blank" class="baidu-link">岗厦汇国际公寓</a>
-            </div>
-
-            <div class="timeline-item">
-                <div class="time-badge">18:00</div>
-                <div class="activity">晚餐與逛街</div>
-                <div class="details">
-                    卓悦中心、玩具店。<br>
-                    2隊人馬打車至卓越匯吃晚餐。<br>
-                    晚餐地點：卓悦汇购物中心南区3楼L3-28 舟市水产 (大人@288/小孩118)。
-                </div>
-                <a href="https://map.baidu.com/search/卓悦中心" target="_blank" class="baidu-link">卓悦中心</a>
-                <a href="https://map.baidu.com/search/卓悦汇购物中心" target="_blank" class="baidu-link">卓越匯(舟市水产)</a>
-            </div>
-        </div>
-
-        <div id="day2" class="day-content">
-            <div class="timeline-item">
-                <div class="time-badge">07:36 - 08:27</div>
-                <div class="activity">高鐵前往廣州</div>
-                <div class="details">
-                    <span class="hsr-highlight">🚄 G388 福田站 ➔ 广州南站 (07:36 - 08:27)</span>
-                </div>
-                <a href="
+                <div class="
